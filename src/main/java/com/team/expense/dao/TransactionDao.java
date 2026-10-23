@@ -1,8 +1,9 @@
 package com.team.expense.dao;
 
-import com.team.expense.model.Transaction;
 import java.util.List;
 import java.util.Optional;
+
+import com.team.expense.model.Transaction;
 
 public interface TransactionDao {
     void add(Transaction transaction);

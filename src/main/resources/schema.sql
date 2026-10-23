@@ -1,11 +1,13 @@
-CREATE DATABASE IF NOT EXISTS expense_tracker;
-USE expense_tracker;
+CREATE DATABASE IF NOT EXISTS expensetracer;
+USE expensetracer;
 
 CREATE TABLE IF NOT EXISTS transactions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    type ENUM('INCOME', 'EXPENSE') NOT NULL,
-    amount DECIMAL(10, 2) NOT NULL CHECK (amount > 0),
-    category VARCHAR(50) NOT NULL,
-    txn_date DATE NOT NULL,
-    note VARCHAR(255)
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    type VARCHAR(10) NOT NULL,
+    amount DECIMAL(12,2) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    transaction_date DATE NOT NULL,
+    note VARCHAR(500),
+    CONSTRAINT chk_transaction_type CHECK (type IN ('INCOME', 'EXPENSE')),
+    CONSTRAINT chk_transaction_amount CHECK (amount > 0)
 );

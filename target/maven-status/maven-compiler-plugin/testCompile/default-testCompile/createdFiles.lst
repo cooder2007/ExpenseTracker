@@ -1,1 +1,3 @@
+com\team\expense\dao\InMemoryTransactionDaoTest.class
 com\team\expense\MainTest.class
+com\team\expense\service\TransactionServiceImplTest.class
